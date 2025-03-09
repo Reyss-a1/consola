@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/styles.css/estilos.css">
+    <script src="js/scripts/script.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="index.html"><img src="archivos multimedia/imagenes/REYES.jpg" alt="REYES Logo"></a>
+            <span>|</span>
+            <a href="index.html"><img src="archivos multimedia/imagenes/xbox.png" alt="xbox Logo"></a>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li class="nav-menu">
+                <a href="https://www.xbox.com/es-MX/xbox-game-pass?xr=shellnav">Game Pass</a>
+                </li>
+                <li class="submenu">
+                    <a href="#">Juegos▼</a>
+                    <ul class="submenu-content">
+                        <li><a href="pagina-juegos.html" target="_blank">Página principal de Juegos</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#">Dispositivos▼</a>
+                    <ul class="submenu-content">
+                        <li class="submenu">
+                        <li><a href="consolas.html" target="_blank">Consolas</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li><a href="soporte tecnico.html">Soporte técnico</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <input type="text" id="search-input" placeholder="Buscar..." class="search-input">
+            <a href="#" class="search-icon"><img src="archivos multimedia/imagenes/search.png" alt="Buscar"></a>
+            <a href="#" id="cart-icon"><img src="archivos multimedia/imagenes/cart.png" alt="Carro"></a>
+            <a href="#"><img src="archivos multimedia/imagenes/user.png" alt="Iniciar sesión"></a>
+        </div>
+    </header>
+
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/Avowed.png" alt="Imagen 1"></div>
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/overwch2.jpg" alt="Imagen 2"></div>
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/mortal1.png" alt="Imagen 3"></div>
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/dum.png" alt="Imagen 4"></div>
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/goku1.png" alt="Imagen 5"></div>
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/NBA2K25.jpeg" alt="Imagen 6"></div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        <div class="indicators">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+    <section class="contenido-adicional">
+        <div class="seccion-texto">
+            <center>
+                <h1>Mantente actualizado con las novedades que tenemos para ti</h1>
+            </center>
+            <center>
+                <p>"Vive la emoción de lo más reciente en videojuegos, con actualizaciones, mejoras y desafíos que pondrán a prueba tus habilidades"</p>
+            </center>
+        </div>
+        <div class="consolas-accesorios">
+            <div class="texto-consolas">
+                <h1><p>Descubre todas las consolas<br>y accesorios<br>que tenemos para ti...</p></h1>
+            </div>
+            <div class="carousel-consolas">
+                <div class="carousel-track-consolas">
+                    <div class="carousel-slide-consolas"><img src="archivos multimedia/imagenes/playstation.jpeg" alt="PS5"></div>
+                    <div class="carousel-slide-consolas"><img src="archivos multimedia/imagenes/Xbox Series X.jpeg" alt="Xbox Series X"></div>
+                    <div class="carousel-slide-consolas"><img src="archivos multimedia/imagenes/nintendo.jpeg" alt="nintendo"></div>
+                </div>
+            </div>
+        </div>
+        <section class="seccion-imagenes2">
+            <div class="icono-contenedor">
+                <a href="pagina-juegos.html" class="icono-contenedor">
+                    <img src="archivos multimedia/iconos/play.png" alt="Juegos" class="icono-imagen">
+                    <span class="icono-texto">Juegos</span>
+                </a>
+            </div>
+            <div class="icono-contenedor">
+                <a href="consolas.html" class="icono-contenedor">
+                    <img src="archivos multimedia/iconos/xbox-console.png" alt="Consola" class="icono-imagen">
+                    <span class="icono-texto">Consolas</span>
+                </a>
+            </div>
+            <div class="icono-contenedor">
+                <a href="accesorios.html" class="icono-contenedor">
+                    <img src="archivos multimedia/iconos/auriculares.png" alt="Accesorios" class="icono-imagen">
+                    <span class="icono-texto">Accesorios</span>
+                </a>
+            </div>
+        </section>
+    </section>
+
+    <div class="redes-sociales">
+        <p>Síguenos en redes sociales</p>
+        <div class="iconos-redes">
+            <a href="https://es-la.facebook.com/login/device-based/regular/login/" class="icono-redes"><img src="archivos multimedia/iconos/icono facebook.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/" class="icono-redes"><img src="archivos multimedia/iconos/icono instagram.png" alt="instagram"></a>
+            <a href="https://web.whatsapp.com/" class="icono-redes"><img src="archivos multimedia/iconos/icono whatsapp.png" alt="whatsapp"></a>
+        </div>
+    </div>
+
+    <script src="js/scripts/script.js"></script>
+</body>
+</html>

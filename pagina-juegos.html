@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos</title>
+    <link rel="stylesheet" href="css/styles.css/estilos.css">
+    <script src="js/scripts/script.js" defer></script>
+    <style>
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="index.html"><img src="archivos multimedia/imagenes/REYES.jpg" alt="REYES Logo"></a>
+            <span>|</span>
+            <a href="index.html"><img src="archivos multimedia/imagenes/xbox.png" alt="xbox Logo"></a>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li class="nav-menu"><a href="https://www.xbox.com/es-MX/xbox-game-pass?xr=shellnav">Game Pass</a></li>
+                <li class="submenu">
+                    <a href="#">Juegos▼</a>
+                    <ul class="submenu-content">
+                        <li><a href="pagina-juegos.html" target="_blank">Página principal de Juegos</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#">Dispositivos▼</a>
+                    <ul class="submenu-content">
+                        <li><a href="consolas.html" target="_blank">Consolas</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li><a href="soporte tecnico.html">Soporte técnico</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <input type="text" id="search-input" placeholder="Buscar..." class="search-input">
+            <a href="#" class="search-icon"><img src="archivos multimedia/imagenes/search.png" alt="Buscar"></a>
+            <a href="#" id="cart-icon"><img src="archivos multimedia/imagenes/cart.png" alt="Carro"></a>
+            <a href="#"><img src="archivos multimedia/imagenes/user.png" alt="Iniciar sesión"></a>
+        </div>
+    </header>
+
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/dum.png" alt="dum"></div>
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/goku1.png" alt="goku1"></div>
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/mortal1.png" alt="mortal1"></div>
+            <div class="carousel-slide"><img src="archivos multimedia/imagenes/diablo5.png" alt="diablo5"></div>
+        </div>
+        <div class="indicators">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    <main>
+        <div class="mas-vendidos">
+            <h2>Nuevos lanzamientos</h2>
+        </div>
+
+        <div class="juegos-container">
+            <div class="juegos-row">
+                <div class="juego"><img src="archivos multimedia/imagenes/wwe.jpeg" alt="Edición WWE 2K25"><h3>WWE 2K25<br>Edición</h3></div>
+                <div class="juego"><img src="archivos multimedia/imagenes/gta on.png" alt="Grand Theft Auto Online"><h3>Grand Theft Auto Online</h3></div>
+                <div class="juego"><img src="archivos multimedia/imagenes/minecraft.png" alt="Minecraft"><h3>Minecraft</h3></div>
+                <div class="juego"><img src="archivos multimedia/imagenes/zelda.jpeg" alt="Zelda Breath Of The WILD"><h3>Zelda Breath Of<br>The WILD</h3></div>
+                <div class="juego"><img src="archivos multimedia/imagenes/reddeadll.png" alt="Red Dead Redemption 2"><h3>Red Dead Redemption 2</h3></div>
+            </div>
+
+            <div class="juegos-row">
+                <div class="juego"><img src="archivos multimedia/imagenes/thelast.jpeg" alt="The Last"><h3>The Last</h3></div>
+                <div class="juego"><img src="archivos multimedia/imagenes/fc25.png" alt="EA SPORTS FC 25"><h3>EA SPORTS FC 25<br>Edición Xbox One</h3></div>
+                <div class="juego"><img src="archivos multimedia/imagenes/dbz.png" alt="DRAGON BALL FighterZ"><h3>DRAGON BALL<br>FighterZ</h3></div>
+                <div class="juego"><img src="archivos multimedia/imagenes/dead.png" alt="Deadlight: Director Cut"><h3>Deadlight:<br>Director Cut</h3></div>
+                <div class="juego"><img src="archivos multimedia/imagenes/avowedd.jpeg" alt="Avowed"><h3>Avowed Standard Edition</h3></div>
+            </div>
+        </div>
+
+        <div class="redes-sociales">
+            <p>Síguenos en redes sociales</p>
+            <div class="iconos-redes">
+                <a href="https://es-la.facebook.com/login/device-based/regular/login/" class="icono-redes"><img src="archivos multimedia/iconos/icono facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/" class="icono-redes"><img src="archivos multimedia/iconos/icono instagram.png" alt="instagram"></a>
+                <a href="https://web.whatsapp.com/" class="icono-redes"><img src="archivos multimedia/iconos/icono whatsapp.png" alt="whatsapp"></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/scripts/script.js"></script>
+</body>
+</html>

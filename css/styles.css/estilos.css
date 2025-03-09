@@ -1,0 +1,773 @@
+/* Inicio: Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Fin: Reset de estilos */
+
+/* Inicio: Estilos del body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+/* Fin: Estilos del body */
+
+/* Inicio: Barra de navegación */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+/* Fin: Barra de navegación */
+
+/* Inicio: Menú principal */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: #107C10;
+}
+/* Fin: Menú principal */
+
+/* Inicio: Submenú */
+/* Submenú oculto correctamente */
+.submenu-content {
+    position: absolute;
+    background-color: #e0e0e0;
+    list-style: none;
+    width: 200px;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: hidden; /* 🔹 Evita que el submenú ocupe espacio cuando está oculto */
+}
+
+/* Mostrar submenú al pasar el mouse */
+.nav-menu ul li:hover > .submenu-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible; /* 🔹 Ahora el submenú solo aparece cuando el mouse está sobre él */
+}
+
+
+/* Estilo de los elementos del submenú */
+.submenu-content li {
+    border-bottom: 1px solid #ccc;
+}
+
+.submenu-content a {
+    padding: 10px;
+    color: #333;
+    display: block;
+}
+
+.submenu-content li:hover {
+    background: #ddd;
+}
+/* Submenú de Consolas */
+.submenu-content .submenu-content {
+    left: 100%; /* Posiciona el submenú a la derecha del padre */
+    top: 0;
+}
+
+/* Fin: Submenú */
+
+/* Inicio: Contenedor de Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img { /*cambia el tamaño de los logos del costado*/
+    height: 40px;
+    margin-right: 10px;
+}
+/* Fin: Contenedor de Logo */
+
+/* Inicio: Botones de usuario */
+.user-actions a {
+    margin-left: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.user-actions img {
+    height: 16px;
+}
+/* Fin: Botones de usuario */
+
+/* Inicio: Responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .submenu-content {
+        position: relative;
+        width: 100%;
+    }
+}
+/* Fin: Responsivo */
+
+/* Inicio: Carrusel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 95vh;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slide {
+    width: 100vw;
+    flex-shrink: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Fin: Carrusel */
+
+/* Inicio: Botones de navegación del carrusel */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: #333;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 28px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+/* Fin: Botones de navegación del carrusel */
+
+/* Inicio: Indicadores del carrusel */
+.indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+/* Fin: Indicadores del carrusel */
+
+/* Inicio: Formulario de búsqueda */
+.search-form {
+    display: none; /*oculta el formulario inicialmente*/
+}
+/* Fin: Formulario de búsqueda */
+
+/* Inicio: Contenido adicional */
+.contenido-adicional {
+    font-family: "century gothic", sans-serif;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenido-adicional h2 {
+    font-family: "century gothic", sans-serif;
+    font-size: 12px;
+}
+
+.contenido-adicional p {
+    font-family: "century gothic", sans-serif;
+    font-size: 30px;
+}
+
+.contenido-adicional p:first-child {
+    margin-top: 20px;
+}
+/* Fin: Contenido adicional */
+
+/* Inicio: Sección de texto */
+.seccion-texto {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 80px; /* crea el espacio y el carrusel de consolas*/
+}
+/* Fin: Sección de texto */
+
+/* Inicio: Sección de imágenes */
+.seccion-imagenes {
+    font-size: 30px;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.seccion-imagenes i {
+    color: #333;
+}
+
+.contenido-adicional h2 {
+    margin-bottom: 10px;
+}
+/* Fin: Sección de imágenes */
+
+/* Inicio: Sección de imágenes 2 */
+.seccion-imagenes2 {
+    width: 60px;
+    height: 60px;
+    margin: 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease; /* Agregamos una transición suave */
+}
+
+.seccion-imagenes2:hover {
+    transform: scale(1.3); /* Aumentamos el tamaño al pasar el mouse */
+}
+
+.seccion-imagenes2 img:hover {
+    transform: scale(1.3); /* Aumenta el tamaño al pasar el mouse */
+}
+
+.icono-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px;
+    margin-top: 85px;
+}
+
+.icono-imagen {
+    width: 70px;
+    height: auto;
+}
+
+.icono-texto {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #107C10;
+    margin-top: 10px;
+}
+
+.seccion-imagenes2 i {
+    color: #107C10;
+}
+
+.icono {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #107C10;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+/* Inicio: Sección de Consolas y Accesorios */
+.consolas-accesorios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    min-height: 400px; /*ajustala altura*/
+    overflow: hidden; /* Oculta el contenido que sobresale */
+}
+
+.texto-consolas {
+    width: 40%;
+    text-align: left;
+}
+
+.texto-consolas p {
+    font-size: 55px;
+    line-height: 1.8; /* añade espacio entre lineas*/
+}
+
+.carousel-consolas {
+    width: 76%;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease; /* Agregamos una transición suave */
+
+}
+.carousel-consolas:hover {
+    transform: scale(1.5); /* Aumentamos el tamaño al pasar el mouse */
+}
+
+.carousel-track-consolas {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    height: 100%; /* El track también ocupa toda la altura */
+}
+
+.carousel-slide-consolas {
+    width: 100%;
+    flex-shrink: 0;
+    text-align: center;
+    display: flex; /* Usamos flexbox para centrar verticalmente la imagen */
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* La slide ocupa toda la altura */
+}
+
+.carousel-slide-consolas img {
+    max-width: 300px; /* Ajusta el tamaño de las imágenes */
+    height: auto;
+    max-height: 90%; /* Ajusta el tamaño máximo de la imagen */
+}
+/* Fin: Sección de Consolas y Accesorios */
+
+.seccion-imagenes2 a { /* Añadido para quitar el subrayado de los enlaces */
+    text-decoration: none;
+}
+
+/* Inicio: Redes Sociales */
+.redes-sociales {
+    width: 100%; /* Asegura que ocupa todo el ancho */
+    background: #f1f1f1; /* Mantiene el fondo gris */
+    text-align: center;
+    padding: 20px 0; /* Espaciado vertical */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 200px; /* agregamos un margen superior*/
+}
+
+.redes-sociales p {
+    margin-bottom: 45px; /*crea espacio entre el texto y los iconos de redes*/
+    font-weight: bold;
+}
+
+.iconos-redes {
+    display: inline-block;
+}
+
+.icono-redes img {
+    width: 60px;
+    height: 60px;
+    margin: 0 35px;
+    transition: transform 0.3s ease; /* Agregamos una transición suave */
+}
+
+.icono-redes img:hover {
+    transform: scale(1.7); /* Aumentamos el tamaño al pasar el mouse */
+}
+/* Fin: Redes Sociales */
+
+
+/* Estilos de la pagina-juegos */
+
+main {
+    padding: 30px;
+}
+
+/* Ajuste para dar espacio entre título y juegos */
+.mas-vendidos {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Contenedor de juegos centrado */
+.juegos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Filas de juegos con 5 elementos por fila */
+.juegos-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.juego {
+    text-align: center;
+    width: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación al pasar el mouse */
+.juego:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.juego img {
+    width: 100%;
+    border-radius: 12px;
+    border-radius: 10px;
+}
+
+
+/* estilos de la pagina accesorios*/
+
+/* Contenedor principal del video de portada */
+.video-portada {
+    width: 100%; /* El contenedor ocupa todo el ancho disponible */
+    max-width: 1920px; /* Ancho máximo del contenedor (para pantallas grandes) */
+    height: 950px; /* Altura fija del contenedor */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    position: relative; /* Permite posicionar elementos dentro del contenedor */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor */
+}
+
+/* Contenedor de la pista de videos (usado para la transición) */
+.video-portada-track {
+    display: flex; /* Permite que los videos se muestren en línea */
+    width: 100%; /* 2 videos => 200% del ancho */
+    transition: transform 0.5s ease-in-out; /* Transición suave para el cambio de videos */
+}
+
+/* Contenedor de los slides de video */
+.video-portada-slide {
+    flex: 0 0 100%; /* Cada slide ocupa el 100% del ancho del contenedor */
+    display: flex; /* Asegura un layout flexible */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos del elemento de video */
+.video-portada-slide video {
+    width: 100%; /* El video ocupa todo el ancho del slide */
+    height: auto; /* Mantiene la proporción del video */
+    object-fit: cover; /* Ajusta el video para cubrir todo el contenedor */
+}
+
+/* Contenedor de los puntos de navegación */
+.video-portada-dots {
+    position: absolute;
+    bottom: 10px; /* Asegura que los puntos estén sobre el video */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* Estilos de los puntos de navegación */
+.video-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Punto activo */
+.video-dot.active {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+/* Sección de productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Siempre 4 columnas */
+    gap: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Estilos individuales de cada producto */
+.producto {
+    display: inline-block;
+    visibility: visible;
+}
+
+.producto img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.producto img:hover {
+    transform: scale(1.05);
+}
+
+.producto p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Diseño Responsive para pantallas pequeñas */
+@media (max-width: 900px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .productos {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
+    }
+}
+/* Carrito */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+.cart.open {
+    right: 0;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#close-cart {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Buscador */
+.search-input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+/* Estilos de la página de consolas */
+
+/* Contenedor de consolas */
+.consolas-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* Animación de entrada para las consolas */
+.consola {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: aparecer 0.8s ease-out forwards;
+}
+
+/* Delay de animación para cada consola */
+.consola:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.consola:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.consola:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Efecto hover en cada consola */
+.consola:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Imágenes de las consolas */
+.consola img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Animación de aparición */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* estilos de la pagina soporte-tecnico*/
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sección de soporte */
+.support-section {
+    text-align: center;
+    padding: 60px 40px 40px 40px; /* Aumenta el primer valor para bajar todo */
+}
+.support-section h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.support-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+/* Galería de soporte */
+.support-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.support-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.support-item:hover {
+    transform: scale(1.05);
+}
+
+.support-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.support-item p {
+    color: #444;
+    font-weight: bold;
+}
+
+/* Sección de contacto */
+.contact-info {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    border-top: 3px solid #333;
+}
+
+.contact-info h2 {
+    color: #222;
+}
+
+.contact-info p {
+    color: #555;
+}
